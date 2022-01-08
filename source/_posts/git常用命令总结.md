@@ -2,6 +2,10 @@
 abbrlink: acc3d3b0
 title: git常用命令总结
 date: 2022-01-08
+categories: 
+   - Git
+tags: 
+   - github  
 ---
 ## 新建仓库
 ```

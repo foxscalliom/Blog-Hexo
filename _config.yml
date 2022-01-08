@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: foxscallion部落格
-subtitle: ''
-description: ''
+title: 破晓の博客
+subtitle: 倘只看书,便变成书橱
+description: 我好像一只牛,吃的是草,挤出的是牛奶
 keywords:
-author: foxscallion
+author: 破晓
 language: zh-CN
 timezone: Asia/Shanghai
 
@@ -103,6 +103,15 @@ exclude:
 ignore:
 
 # Extensions
+# RSS订阅
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: next
