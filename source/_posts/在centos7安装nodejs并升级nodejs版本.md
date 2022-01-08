@@ -1,6 +1,7 @@
 ---
 title: 在centos7安装nodejs并升级nodejs版本
 abbrlink: 59268fdb
+date: 2022-01-07
 ---
 ## 1. 安装 nodejs
 ------------
