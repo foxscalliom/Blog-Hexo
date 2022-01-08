@@ -1,1 +1,0 @@
-hexo clean && hexo g && git add . &&  git commit -m "linux git commit blog" &&  git push -u origin main -f 
