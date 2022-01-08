@@ -1,5 +1,6 @@
 ---
- title: 在_centos7_安装_nodejs_并升级_nodejs_到最新版本.md
+title: 在centos7安装nodejs并升级nodejs版本
+abbrlink: 59268fdb
 ---
 ## 1. 安装 nodejs
 ------------
