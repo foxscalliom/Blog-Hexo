@@ -1,1 +1,1 @@
-git add . &&  git commit -m "first start new add hugo movie finally end" &&  git push -u origin master -f
+git add . &&  git commit -m "first start new add hugo movie finally end" &&  git push -u origin main -f
