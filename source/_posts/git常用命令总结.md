@@ -1,5 +1,6 @@
 ---
-abbrlink: '0'
+abbrlink: acc3d3b0
+title: git常用命令总结
 ---
 ---
 
@@ -19,4 +20,9 @@ git push -u origin main
 git remote add origin git@github.com:foxscalliom/test.git
 git branch -M main
 git push -u origin main
+```
+## 不保留本地
+```
+git reset --hard 
+git pull origin main
 ```
