@@ -1,4 +1,9 @@
-# Blog-Hexo
+---
+abbrlink: '0'
+---
+---
+
+---
 ## 新建仓库
 ```
 echo "# test" >> README.md
