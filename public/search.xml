@@ -1,20 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>git常用命令总结</title>
-    <url>/posts/acc3d3b0.html</url>
-    <content><![CDATA[<h2 id="新建仓库"><a href="#新建仓库" class="headerlink" title="新建仓库"></a>新建仓库</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">echo &quot;# test&quot; &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git branch -M main</span><br><span class="line">git remote add origin git@github.com:foxscalliom/test.git</span><br><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-<h2 id="拉取仓库"><a href="#拉取仓库" class="headerlink" title="拉取仓库"></a>拉取仓库</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git remote add origin git@github.com:foxscalliom/test.git</span><br><span class="line">git branch -M main</span><br><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
-<h2 id="不保留本地"><a href="#不保留本地" class="headerlink" title="不保留本地"></a>不保留本地</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git reset --hard </span><br><span class="line">git pull origin main</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Git</category>
-      </categories>
-      <tags>
-        <tag>github</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/posts/4a17b156.html</url>
     <content><![CDATA[<p>Welcome to <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvLw==">Hexo<i class="fa fa-external-link-alt"></i></span>! This is your very first post. Check <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL2RvY3Mv">documentation<i class="fa fa-external-link-alt"></i></span> for more info. If you get any problems when using Hexo, you can find the answer in <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL2RvY3MvdHJvdWJsZXNob290aW5nLmh0bWw=">troubleshooting<i class="fa fa-external-link-alt"></i></span> or you can ask me on <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2hleG9qcy9oZXhvL2lzc3Vlcw==">GitHub<i class="fa fa-external-link-alt"></i></span>.</p>
@@ -145,5 +131,19 @@
 <h3 id="3-4-wq保存退出"><a href="#3-4-wq保存退出" class="headerlink" title="3.4 :wq保存退出"></a>3.4 <code>:wq</code>保存退出</h3><h3 id="3-5-执行-source-使修改生效。"><a href="#3-5-执行-source-使修改生效。" class="headerlink" title="3.5 执行 source 使修改生效。"></a>3.5 执行 source 使修改生效。</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ source ~/.bash_profile</span><br></pre></td></tr></table></figure>
 
 <h3 id="3-6-这时候再查看node-v发现版本切换成功了。"><a href="#3-6-这时候再查看node-v发现版本切换成功了。" class="headerlink" title="3.6 这时候再查看node -v发现版本切换成功了。"></a>3.6 这时候再查看<code>node -v</code>发现版本切换成功了。</h3>]]></content>
+  </entry>
+  <entry>
+    <title>git常用命令总结</title>
+    <url>/posts/acc3d3b0.html</url>
+    <content><![CDATA[<h2 id="新建仓库"><a href="#新建仓库" class="headerlink" title="新建仓库"></a>新建仓库</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">echo &quot;# test&quot; &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git branch -M main</span><br><span class="line">git remote add origin git@github.com:foxscalliom/test.git</span><br><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<h2 id="拉取仓库"><a href="#拉取仓库" class="headerlink" title="拉取仓库"></a>拉取仓库</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git remote add origin git@github.com:foxscalliom/test.git</span><br><span class="line">git branch -M main</span><br><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
+<h2 id="不保留本地"><a href="#不保留本地" class="headerlink" title="不保留本地"></a>不保留本地</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git reset --hard </span><br><span class="line">git pull origin main</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>github</tag>
+      </tags>
   </entry>
 </search>

@@ -1,1 +1,1 @@
-hexo clean && hexo g && git add . &&  git commit -m "win git commit blog" &&  git push -u origin main -f 
+hexo clean && hexo g && hexo d && git add . &&  git commit -m "win git commit blog" &&  git push -u origin main -f 
