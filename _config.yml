@@ -6,14 +6,14 @@
 title: 百里の博客
 subtitle: 倘只看书,便变成书橱
 description: 我好像一只牛,吃的是草,挤出的是牛奶
-keywords:
+keywords: 前端博客,JavaScript,html5,css3,Jquery,NodeJs,Ubuntu,Vue,ES6
 author: 百里
 language: zh-CN
 timezone: Asia/Shanghai
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://i100.xyz
+url: https://i100.xyz
 permalink: posts/:abbrlink.html  # 此处可以自己设置，也可以直接使用 /:abbrlink  posts也可改也可以去掉
 abbrlink:
     alg: crc32   #算法： crc16(default) and crc32
@@ -115,6 +115,13 @@ ignore:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: next
-
+# 百度链接提交 - 主动推送
+baidu_url_submit:
+  count: 10 ## 提交最新的x个链接
+  host: i100.xyz ## 在百度搜索资源平台验证的站点
+  token: your_token ## 在搜索资源平台申请的推送用的准入密钥
+  path: baidu_urls.txt ## 文本文档的地址，新链接会保存在此文本文档里
+deploy:
+ - type: baidu_url_submitter
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
