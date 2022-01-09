@@ -20,15 +20,6 @@
   </url>
   
   <url>
-    <loc>https://i100.xyz/posts/59268fdb.html</loc>
-    
-    <lastmod>2022-01-09</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://i100.xyz/posts/4a17b156.html</loc>
     
     <lastmod>2022-01-09</lastmod>
@@ -38,7 +29,7 @@
   </url>
   
   <url>
-    <loc>https://i100.xyz/tags/index.html</loc>
+    <loc>https://i100.xyz/posts/59268fdb.html</loc>
     
     <lastmod>2022-01-09</lastmod>
     
@@ -48,6 +39,15 @@
   
   <url>
     <loc>https://i100.xyz/categories/index.html</loc>
+    
+    <lastmod>2022-01-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://i100.xyz/tags/index.html</loc>
     
     <lastmod>2022-01-09</lastmod>
     
