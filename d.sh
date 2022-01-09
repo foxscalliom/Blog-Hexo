@@ -1,1 +1,1 @@
-git reset --hard && git pull origin main && hexo clean && hexo g && git add . &&  git commit -m "linux git commit blog" &&  git push -u origin main -f 
+hexo clean && hexo g && git add . &&  git commit -m "win git commit blog" &&  git push -u origin main -f 

@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 破晓の博客
+title: 百里の博客
 subtitle: 倘只看书,便变成书橱
 description: 我好像一只牛,吃的是草,挤出的是牛奶
 keywords:
-author: 破晓
+author: 百里
 language: zh-CN
 timezone: Asia/Shanghai
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://www.foxscallion.xyz
+url: http://i100.xyz
 permalink: posts/:abbrlink.html  # 此处可以自己设置，也可以直接使用 /:abbrlink  posts也可改也可以去掉
 abbrlink:
     alg: crc32   #算法： crc16(default) and crc32
