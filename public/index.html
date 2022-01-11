@@ -217,7 +217,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-01-12 01:08:19 / 修改时间：02:01:07" itemprop="dateCreated datePublished" datetime="2022-01-12T01:08:19+08:00">2022-01-12</time>
+              <time title="创建时间：2022-01-12 01:08:19 / 修改时间：02:03:47" itemprop="dateCreated datePublished" datetime="2022-01-12T01:08:19+08:00">2022-01-12</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -240,7 +240,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="nginx基本配置"><a href="#nginx基本配置" class="headerlink" title="nginx基本配置"></a>nginx基本配置</h2><h3 id="安装nginx"><a href="#安装nginx" class="headerlink" title="安装nginx"></a>安装nginx</h3><p>编辑安装环境</p>
+          <h2 id="nginx基本配置"><a href="#nginx基本配置" class="headerlink" title="nginx基本配置"></a>nginx基本配置</h2><h3 id="安装nginx"><a href="#安装nginx" class="headerlink" title="安装nginx"></a>安装nginx</h3><p>用yum进行安装必要程序</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum -y install gcc gcc-c++ autoconf pcre-devel make automake</span><br><span class="line">yum -y install wget httpd-tools vim</span><br></pre></td></tr></table></figure>
+<p>编辑安装环境</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/yum.repos.d/nginx.repo</span><br></pre></td></tr></table></figure>
 <p>复制下面的代码</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[nginx]</span><br><span class="line">name=nginx repo</span><br><span class="line">baseurl=http://nginx.org/packages/centos/7/<span class="variable">$basearch</span>/</span><br><span class="line">gpgcheck=0</span><br><span class="line">enabled=1</span><br></pre></td></tr></table></figure>

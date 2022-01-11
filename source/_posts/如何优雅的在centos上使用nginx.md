@@ -10,6 +10,11 @@ date: 2022-01-12 01:08:19
 ---
  ## nginx基本配置
  ### 安装nginx
+用yum进行安装必要程序
+```sh
+yum -y install gcc gcc-c++ autoconf pcre-devel make automake
+yum -y install wget httpd-tools vim
+```
 编辑安装环境
 ```sh
 vim /etc/yum.repos.d/nginx.repo
