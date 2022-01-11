@@ -15,6 +15,7 @@ let [a,b="i100"]=['百里']
 console.log(a+b); //控制台显示“百里i100”
 ```
 > 注意：对象的解构与数组有一个重要的不同。数组的元素是按次序排列的，变量的取值由它的位置决定；而对象的属性没有次序，变量必须与属性同名，才能取到正确的值。
+<!--more-->
 ### 圆括号的使用
 在解构之前定义了变量在解构会报错，解决方法是在整体的外边加一个括号
 ```js
@@ -300,7 +301,6 @@ let obj2 = {name:'xiaoming'};
 let res = Object.is(obj1,obj2);
 console.log('i100',res);
 ```
-> ===为同值相等，is()为严格相等;
 - `Object.assign()`合并对象
 ```js
 let a={a:'a'}
@@ -354,7 +354,7 @@ for(let item in obj) {
 }
 console.log('i100',obj);
 ```
-## Set和WeakSet数据结构
+## Set数据结构
 > Set数据结构，注意这里不是数据类型，而是数据结构。它是ES6中新的东西，并且很有用处。Set的数据结构是以数组的形式构建的。
 ### Set声明
 ```js
@@ -532,4 +532,156 @@ console.log("proxy1",proxy(1,2));
 console.log("proxy.call",proxy.call(null,5,6));
 console.log("proxy,apply",proxy.apply(null,[7,8]));
 console.log("proxy,apply",Reflect.apply(proxy,null,[7,8]));
+```
+## promise对象的使用
+>ES6中的promise的出现给我们很好的解决了回调地狱的问题，在使用ES5的时候，在多层嵌套回调时，写完的代码层次过多，很难进行维护和二次开发，ES6认识到了这点问题，现在promise的使用，完美解决了这个问题。
+
+### promise基本用法
+模拟一个多步骤多过程，如在家吃饭需要三个步骤。
+- 开始做饭
+- 坐下来吃饭
+- 🤕️洗碗
+这个过程是有执行顺序多，确保上一步完成，才能继续下一步操作
+```js
+let state = 1;
+function step1(resolve,reject) {
+    console.log('1.开始做饭');
+    if(state) {
+        resolve('做饭完成');
+    }else{
+        reject('做饭出错了');
+    }
+}
+function step2(resolve,reject) {
+    console.log('2.开始吃饭');
+    if(state) {
+        resolve('吃饭完成')
+    }else {
+        reject('吃饭出错')
+    }
+}
+function step3(resolve,reject) {
+    console.log('3.开始洗碗');
+    if(state) {
+        resolve('洗碗完成')
+    }else {
+        reject('洗碗出错')
+    }
+}
+new Promise(step1).then(function (val) { 
+    console.log(val);
+    return new Promise(step2)
+}).then(function (val) { 
+    console.log(val);
+    return new Promise(step3)
+}).then(function (val) {
+    console.log(val);
+    return val;
+})
+```
+## class类的使用
+>在ES5中经常使用方法或者对象去模拟类的使用，虽然可以实现功能，但是代码并不优雅，ES6为我们提供了类的使用。需要注意的是我们在写类的时候和ES5中的对象和构造函数要区分开来，不要学混了。
+### 类的声明
+```js
+class coder {
+    name(val) {
+        console.log('i100',val);
+    }
+}
+```
+### 类的使用
+```js
+class Coder{
+    name(val) {
+        console.log('i100',val);
+    }
+    skill(val) {
+        let res = this.name + val;
+        console.log('skill',res);
+    }
+}
+let i100 = new Coder();
+i100.name('百里');
+i100.skill('web');
+```
+这里需要注意的是两个方法中间不要写逗号了，还有这里的this指类本身，还有要注意return 的用法。
+### 类的传参
+在类的参数传递中我们用constructor( )进行传参。传递参数后可以直接使用this.xxx进行调用。
+```js
+class Coder{
+    name(val) {
+        console.log('i100',val);
+    }
+    skill(val) {
+        let res = this.name + val;
+        console.log('skill',res);
+    }
+    constructor(a,b) {
+        this.a = b;
+        this.b = b;
+    }
+    add() {
+        return this.a + this.b;
+    }
+}
+let i100 = new Coder(1,2);
+console.log('i100',i100);
+```
+用constructor来约定了传递参数，然后用作了一个add方法，把参数相加。
+### class的继承
+```js
+class htmler extends Coder {
+    
+}
+let i100 = new htmler();
+i100.name('百里')
+```
+声明一个htmler的新类并继承Coder类，htmler新类里边为空，这时候我们实例化新类，并调用里边的name方法。结果也是可以调用到的。
+## 模块化操作
+在ES5中我们要进行模块华操作需要引入第三方类库，随着前后端分离，前端的业务日渐复杂，ES6为我们增加了模块话操作。模块化操作主要包括两个方面。
+- export :负责进行模块化，也是模块的输出。
+- import : 负责把模块引，也是模块的引入操作。
+### export的用法
+export可以让我们把变量，函数，对象进行模块话，提供外部调用接口，让外部进行引用。先来看个最简单的例子，把一个变量模块化。
+新建一个temp.js文件，然后在文件中输出一个模块变量
+```js
+export let i00 = '百里';
+```
+然后可以在index.js中以import的形式引入。
+```js
+import {i100} from './temp.js';
+console.log('i100',i100);
+```
+这就是一个最简单的模块的输出和引入。
+### as用法
+有些时候我们并不想暴露模块里边的变量名称，而给模块起一个更语义话的名称，这时候我们就可以使用as来操作。
+
+```js
+let a = 'i100', b = '百里', c = 'web';
+export {
+    x as a,
+    y as b,
+    z as c
+}
+```
+### export default的使用
+加上default相当是一个默认的入口。在一个文件里export default只能有一个。我们来对比一下export和export default的区别
+#### export
+```js
+export let i100 = '百里';
+export function add(a,b) {
+    return a+b;
+}
+```
+对应的导入方式
+```js
+import {i100,add} from './temp';
+```
+#### export default
+```js
+export default let i100 = '百里';
+```
+对应的导入方式
+```js
+import str from './temp';
 ```
