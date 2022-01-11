@@ -34,6 +34,7 @@ nginx -v
 ```sh
 rpm -ql nginx
 ```
+<!--more-->
 rpm 是linux的rpm包管理工具，-q 代表询问模式，-l 代表返回列表，这样我们就可以找到nginx的所有安装位置了。
 ### nginx.conf文件解读
 nginx.conf 文件是Nginx总配置文件，在我们搭建服务器时经常调整的文件。
