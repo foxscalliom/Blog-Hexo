@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.i100.xyz/posts/27f7e408.html</loc>
+    
+    <lastmod>2022-01-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.i100.xyz/posts/e38dcee3.html</loc>
     
     <lastmod>2022-01-11</lastmod>
@@ -20,7 +29,7 @@
   </url>
   
   <url>
-    <loc>https://www.i100.xyz/posts/acc3d3b0.html</loc>
+    <loc>https://www.i100.xyz/posts/4a17b156.html</loc>
     
     <lastmod>2022-01-09</lastmod>
     
@@ -29,7 +38,7 @@
   </url>
   
   <url>
-    <loc>https://www.i100.xyz/posts/4a17b156.html</loc>
+    <loc>https://www.i100.xyz/posts/acc3d3b0.html</loc>
     
     <lastmod>2022-01-09</lastmod>
     
@@ -47,7 +56,7 @@
   </url>
   
   <url>
-    <loc>https://www.i100.xyz/categories/index.html</loc>
+    <loc>https://www.i100.xyz/tags/index.html</loc>
     
     <lastmod>2022-01-09</lastmod>
     
@@ -56,7 +65,7 @@
   </url>
   
   <url>
-    <loc>https://www.i100.xyz/tags/index.html</loc>
+    <loc>https://www.i100.xyz/categories/index.html</loc>
     
     <lastmod>2022-01-09</lastmod>
     
@@ -75,6 +84,20 @@
   
   <url>
     <loc>https://www.i100.xyz/tags/github/</loc>
+    <lastmod>2022-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.i100.xyz/tags/centos/</loc>
+    <lastmod>2022-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.i100.xyz/tags/nginx/</loc>
     <lastmod>2022-01-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
