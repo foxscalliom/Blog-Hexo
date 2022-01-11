@@ -24,31 +24,33 @@
     var CONFIG = {"hostname":"www.i100.xyz","root":"/","scheme":"Gemini","version":"7.8.0","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="我好像一只牛,吃的是草,挤出的是牛奶">
-<meta property="og:type" content="website">
-<meta property="og:title" content="百里の博客">
-<meta property="og:url" content="https://www.i100.xyz/index.html">
+  <meta name="description" content="解构赋值解构的默认值undefined不支持，null相当于有值，但值为null 1234let [foo &#x3D; true] &#x3D; [];console.log(&amp;#x27;log&amp;#x27;,foo)let [a,b&#x3D;&quot;i100&quot;]&#x3D;[&amp;#x27;百里&amp;#x27;]console.log(a+b); &#x2F;&#x2F;控制台显示“百里i100”  注意：对象的解构与数组有一个重要的不同。数组的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何优雅的使用ES6">
+<meta property="og:url" content="https://www.i100.xyz/posts/e38dcee3.html">
 <meta property="og:site_name" content="百里の博客">
-<meta property="og:description" content="我好像一只牛,吃的是草,挤出的是牛奶">
+<meta property="og:description" content="解构赋值解构的默认值undefined不支持，null相当于有值，但值为null 1234let [foo &#x3D; true] &#x3D; [];console.log(&amp;#x27;log&amp;#x27;,foo)let [a,b&#x3D;&quot;i100&quot;]&#x3D;[&amp;#x27;百里&amp;#x27;]console.log(a+b); &#x2F;&#x2F;控制台显示“百里i100”  注意：对象的解构与数组有一个重要的不同。数组的">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-01-11T00:58:45.000Z">
+<meta property="article:modified_time" content="2022-01-11T07:40:48.742Z">
 <meta property="article:author" content="百里">
-<meta property="article:tag" content="前端博客,JavaScript,html5,css3,Jquery,NodeJs,Ubuntu,Vue,ES6">
+<meta property="article:tag" content="优雅">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://www.i100.xyz/">
+<link rel="canonical" href="https://www.i100.xyz/posts/e38dcee3.html">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>百里の博客 - 倘只看书,便变成书橱</title>
+  <title>如何优雅的使用ES6 | 百里の博客</title>
   
 
 
@@ -186,9 +188,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -204,10 +207,9 @@
       <meta itemprop="name" content="百里の博客">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/e38dcee3.html" class="post-title-link" itemprop="url">如何优雅的使用ES6</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          如何优雅的使用ES6
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -240,7 +242,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h2><h3 id="解构的默认值"><a href="#解构的默认值" class="headerlink" title="解构的默认值"></a>解构的默认值</h3><p>undefined不支持，null相当于有值，但值为null</p>
+        <h2 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h2><h3 id="解构的默认值"><a href="#解构的默认值" class="headerlink" title="解构的默认值"></a>解构的默认值</h3><p>undefined不支持，null相当于有值，但值为null</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [foo = <span class="literal">true</span>] = [];</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;log&#x27;</span>,foo)</span><br><span class="line"><span class="keyword">let</span> [a,b=<span class="string">&quot;i100&quot;</span>]=[<span class="string">&#x27;百里&#x27;</span>]</span><br><span class="line"><span class="built_in">console</span>.log(a+b); <span class="comment">//控制台显示“百里i100”</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>注意：对象的解构与数组有一个重要的不同。数组的元素是按次序排列的，变量的取值由它的位置决定；而对象的属性没有次序，变量必须与属性同名，才能取到正确的值。</p>
@@ -409,331 +411,33 @@ for…of数组索引:有时候开发中是需要数组的索引的，那我们�
 <h3 id="apple的使用"><a href="#apple的使用" class="headerlink" title="apple的使用"></a>apple的使用</h3>apply的作用是调用内部的方法，它使用在方法体是一个匿名函数时。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> twice = &#123;</span><br><span class="line">  <span class="comment">//目标对象，目标对象的上下文对象，目标对象的参数数组</span></span><br><span class="line">  <span class="attr">apply</span>:<span class="function"><span class="keyword">function</span> (<span class="params">target,ctx,args</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;ctx&quot;</span>,ctx,<span class="string">&quot;args&quot;</span>,args);</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Reflect</span>.apply(...arguments)*<span class="number">2</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span> (<span class="params">left,right</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> left*right;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> proxy = <span class="keyword">new</span> <span class="built_in">Proxy</span>(sum,twice);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;proxy1&quot;</span>,proxy(<span class="number">1</span>,<span class="number">2</span>));</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;proxy.call&quot;</span>,proxy.call(<span class="literal">null</span>,<span class="number">5</span>,<span class="number">6</span>));</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;proxy,apply&quot;</span>,proxy.apply(<span class="literal">null</span>,[<span class="number">7</span>,<span class="number">8</span>]));</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;proxy,apply&quot;</span>,<span class="built_in">Reflect</span>.apply(proxy,<span class="literal">null</span>,[<span class="number">7</span>,<span class="number">8</span>]));</span><br></pre></td></tr></table></figure></li>
 </ul>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/%E4%BC%98%E9%9B%85/" rel="tag"># 优雅</a>
+          </div>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.i100.xyz/posts/932a8af7.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.jpg">
-      <meta itemprop="name" content="百里">
-      <meta itemprop="description" content="我好像一只牛,吃的是草,挤出的是牛奶">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="百里の博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/932a8af7.html" class="post-title-link" itemprop="url">如何让你的代码更优雅</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-01-08 16:35:04" itemprop="dateCreated datePublished" datetime="2022-01-08T16:35:04+08:00">2022-01-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-01-11 08:56:30" itemprop="dateModified" datetime="2022-01-11T08:56:30+08:00">2022-01-11</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="常量赋值"><a href="#常量赋值" class="headerlink" title="常量赋值"></a>常量赋值</h2><h3 id="引用数据类型"><a href="#引用数据类型" class="headerlink" title="引用数据类型"></a>引用数据类型</h3><p>包括接口中返回的数据，要做好兜底</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> lastName = fullName[<span class="number">1</span>] || <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">let</span> propertyValue=<span class="built_in">Object</span>.attr || <span class="number">0</span></span><br></pre></td></tr></table></figure>
-<h3 id="指明类型"><a href="#指明类型" class="headerlink" title="指明类型"></a>指明类型</h3><p>要按强类型风格写代码定义变量的时候要指明类型，并且在变量声明之后，不要随意的去更改变量的数据类型</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 假设声明三个变量a,b,c</span></span><br><span class="line"><span class="keyword">let</span> a,b,c; <span class="comment">// difference，定义变量时没有指明类型</span></span><br><span class="line"><span class="keyword">let</span> a = <span class="string">&quot;&quot;</span>, b = [], c = &#123;&#125;; <span class="comment">// good</span></span><br></pre></td></tr></table></figure>
-<h2 id="逻辑判断"><a href="#逻辑判断" class="headerlink" title="逻辑判断"></a>逻辑判断</h2><h3 id="逻辑判断注意"><a href="#逻辑判断注意" class="headerlink" title="==逻辑判断注意"></a><code>==</code>逻辑判断注意</h3><p><code>==</code> 表示只要值相等即为真，<code>===</code> 要求不仅值相等，而且也要求类型相同<br>使用== 有时候会达不到预期的结果，埋下隐患</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span>  == <span class="string">&#x27;&#x27;</span>          <span class="comment">// true</span></span><br><span class="line"><span class="number">0</span>  == <span class="string">&#x27;0&#x27;</span>         <span class="comment">// true</span></span><br><span class="line"><span class="string">&#x27;&#x27;</span> == <span class="number">0</span>           <span class="comment">// true</span></span><br><span class="line"><span class="string">&#x27;&#x27;</span> == <span class="string">&#x27;0&#x27;</span>         <span class="comment">// false</span></span><br><span class="line"><span class="literal">false</span> == <span class="string">&#x27;0&#x27;</span>        <span class="comment">// true</span></span><br><span class="line"><span class="literal">false</span> == <span class="string">&#x27;false&#x27;</span>    <span class="comment">// false</span></span><br><span class="line"><span class="literal">false</span> == <span class="literal">undefined</span>  <span class="comment">// false</span></span><br><span class="line"><span class="literal">false</span> == <span class="literal">null</span>       <span class="comment">// false</span></span><br><span class="line"><span class="literal">null</span> == <span class="literal">undefined</span>   <span class="comment">// true</span></span><br><span class="line"><span class="literal">true</span> == <span class="number">1</span>           <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-<h3 id="数据类型不确定"><a href="#数据类型不确定" class="headerlink" title="数据类型不确定"></a>数据类型不确定</h3><p>如果变量的数据类型不确定，那咱就手动的转换一下，让它确定</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> total = <span class="string">&quot;6&quot;</span>;</span><br><span class="line"><span class="keyword">if</span>(<span class="built_in">parseInt</span>(total) === <span class="number">6</span>)&#123;&#125; <span class="comment">// grace 手动转换一下数据类型</span></span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/932a8af7.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.i100.xyz/posts/acc3d3b0.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.jpg">
-      <meta itemprop="name" content="百里">
-      <meta itemprop="description" content="我好像一只牛,吃的是草,挤出的是牛奶">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="百里の博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/acc3d3b0.html" class="post-title-link" itemprop="url">git常用命令总结</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2022-01-08 00:00:00 / 修改时间：13:54:16" itemprop="dateCreated datePublished" datetime="2022-01-08T00:00:00+08:00">2022-01-08</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="新建仓库"><a href="#新建仓库" class="headerlink" title="新建仓库"></a>新建仓库</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;# test&quot; &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git branch -M main</span><br><span class="line">git remote add origin git@github.com:foxscalliom/test.git</span><br><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/acc3d3b0.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/932a8af7.html" rel="prev" title="如何让你的代码更优雅">
+      <i class="fa fa-chevron-left"></i> 如何让你的代码更优雅
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.i100.xyz/posts/59268fdb.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.jpg">
-      <meta itemprop="name" content="百里">
-      <meta itemprop="description" content="我好像一只牛,吃的是草,挤出的是牛奶">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="百里の博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/59268fdb.html" class="post-title-link" itemprop="url">在centos7安装nodejs并升级nodejs版本</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-01-07 00:00:00" itemprop="dateCreated datePublished" datetime="2022-01-07T00:00:00+08:00">2022-01-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-01-08 13:44:15" itemprop="dateModified" datetime="2022-01-08T13:44:15+08:00">2022-01-08</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="1-安装-nodejs"><a href="#1-安装-nodejs" class="headerlink" title="1. 安装 nodejs"></a>1. 安装 nodejs</h2><hr>
-<h3 id="1-1-使用-EPEL-安装"><a href="#1-1-使用-EPEL-安装" class="headerlink" title="1.1 使用 EPEL 安装"></a>1.1 使用 EPEL 安装</h3><p>EPEL（Extra Packages for Enterprise Linux）企业版 Linux 的额外软件包，是 Fedora 小组维护的一个软件仓库项目，为 RHEL/CentOS 提供他们默认不提供的软件包。<br>先确认系统是否已经安装了 epel-release 包：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ yum info epel-release</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/59268fdb.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.i100.xyz/posts/4a17b156.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.jpg">
-      <meta itemprop="name" content="百里">
-      <meta itemprop="description" content="我好像一只牛,吃的是草,挤出的是牛奶">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="百里の博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/4a17b156.html" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-01-01 00:00:00" itemprop="dateCreated datePublished" datetime="2022-01-01T00:00:00+08:00">2022-01-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-01-08 13:44:15" itemprop="dateModified" datetime="2022-01-08T13:44:15+08:00">2022-01-08</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvLw==">Hexo<i class="fa fa-external-link-alt"></i></span>! This is your very first post. Check <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL2RvY3Mv">documentation<i class="fa fa-external-link-alt"></i></span> for more info. If you get any problems when using Hexo, you can find the answer in <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL2RvY3MvdHJvdWJsZXNob290aW5nLmh0bWw=">troubleshooting<i class="fa fa-external-link-alt"></i></span> or you can ask me on <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2hleG9qcy9oZXhvL2lzc3Vlcw==">GitHub<i class="fa fa-external-link-alt"></i></span>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/4a17b156.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
   
 
 
@@ -786,6 +490,7 @@ for…of数组索引:有时候开发中是需要数组的索引的，那我们�
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC"><span class="nav-number">1.</span> <span class="nav-text">解构赋值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E6%9E%84%E7%9A%84%E9%BB%98%E8%AE%A4%E5%80%BC"><span class="nav-number">1.1.</span> <span class="nav-text">解构的默认值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%86%E6%8B%AC%E5%8F%B7%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">1.2.</span> <span class="nav-text">圆括号的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%A7%A3%E6%9E%84"><span class="nav-number">1.3.</span> <span class="nav-text">字符串解构</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%A9%E5%B1%95%E4%B8%8Erest%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">2.</span> <span class="nav-text">扩展与rest运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E6%89%A9%E5%B1%95%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">2.1.</span> <span class="nav-text">对象扩展运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%A9%E5%B1%95%E8%BF%90%E7%AE%97%E7%AC%A6%E7%94%A8%E5%A4%84"><span class="nav-number">2.2.</span> <span class="nav-text">扩展运算符用处</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rest%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">2.3.</span> <span class="nav-text">rest运算符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E6%9D%BF%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">3.</span> <span class="nav-text">模板字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8"><span class="nav-number">3.1.</span> <span class="nav-text">简单使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E8%BF%90%E7%AE%97%E7%9A%84%E6%94%AF%E6%8C%81"><span class="nav-number">3.2.</span> <span class="nav-text">对运算的支持</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%9F%A5%E8%AF%A2"><span class="nav-number">3.3.</span> <span class="nav-text">字符串查询</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B0%E5%A2%9E%E6%95%B0%E7%BB%84%E7%9F%A5%E8%AF%86"><span class="nav-number">4.</span> <span class="nav-text">新增数组知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JSON%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2"><span class="nav-number">4.1.</span> <span class="nav-text">JSON格式转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-of-%E6%96%B9%E6%B3%95"><span class="nav-number">4.2.</span> <span class="nav-text">Array.of()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#find-%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95"><span class="nav-number">4.3.</span> <span class="nav-text">find()实例方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fill-%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95"><span class="nav-number">4.4.</span> <span class="nav-text">fill()实例方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E9%81%8D%E5%8E%86"><span class="nav-number">4.5.</span> <span class="nav-text">数组的遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#entries%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95"><span class="nav-number">4.6.</span> <span class="nav-text">entries实例方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0%E5%92%8C%E6%89%A9%E5%B1%95"><span class="nav-number">5.</span> <span class="nav-text">箭头函数和扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%BB%98%E8%AE%A4%E5%80%BC"><span class="nav-number">5.1.</span> <span class="nav-text">默认值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BB%E5%8A%A8%E6%8A%9B%E5%87%BA%E9%94%99%E8%AF%AF"><span class="nav-number">5.2.</span> <span class="nav-text">主动抛出错误</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0"><span class="nav-number">5.3.</span> <span class="nav-text">箭头函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E4%B8%8E%E6%95%B0%E7%BB%84%E7%9A%84%E8%A1%A5%E6%BC%8F"><span class="nav-number">6.</span> <span class="nav-text">函数与数组的补漏</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%BD%E6%95%B0%E8%A7%A3%E6%9E%84"><span class="nav-number">6.1.</span> <span class="nav-text">对象的函数解构</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E5%87%BD%E6%95%B0%E8%A7%A3%E6%9E%84"><span class="nav-number">7.</span> <span class="nav-text">数组函数解构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#in%E7%9A%84%E7%94%A8%E6%B3%95"><span class="nav-number">7.1.</span> <span class="nav-text">in的用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E9%81%8D%E5%8E%86%E7%94%A8%E6%B3%95"><span class="nav-number">7.2.</span> <span class="nav-text">数组遍历用法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ES6%E5%AF%B9%E8%B1%A1"><span class="nav-number">8.</span> <span class="nav-text">ES6对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1Key%E5%80%BC%E6%9E%84%E5%BB%BA"><span class="nav-number">9.</span> <span class="nav-text">对象Key值构建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95"><span class="nav-number">9.1.</span> <span class="nav-text">自定义对象方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Symbol%E5%9C%A8%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">10.</span> <span class="nav-text">Symbol在对象的作用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A3%B0%E6%98%8ESymbol"><span class="nav-number">10.1.</span> <span class="nav-text">声明Symbol</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Symbol%E5%9C%A8%E5%AF%B9%E8%B1%A1%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-number">10.2.</span> <span class="nav-text">Symbol在对象中的应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Symbol%E5%AF%B9%E8%B1%A1%E5%85%83%E7%B4%A0%E7%9A%84%E4%BF%9D%E6%8A%A4%E4%BD%9C%E7%94%A8"><span class="nav-number">10.3.</span> <span class="nav-text">Symbol对象元素的保护作用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Set%E5%92%8CWeakSet%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-number">11.</span> <span class="nav-text">Set和WeakSet数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Set%E5%A3%B0%E6%98%8E"><span class="nav-number">11.1.</span> <span class="nav-text">Set声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Set%E5%80%BC%E7%9A%84%E5%A2%9E%E5%88%A0%E6%9F%A5"><span class="nav-number">11.2.</span> <span class="nav-text">Set值的增删查</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Map%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-number">12.</span> <span class="nav-text">Map数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%96%E5%80%BCget"><span class="nav-number">12.1.</span> <span class="nav-text">取值get</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A0%E9%99%A4delete"><span class="nav-number">12.2.</span> <span class="nav-text">删除delete</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#size%E5%B1%9E%E6%80%A7"><span class="nav-number">12.3.</span> <span class="nav-text">size属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E6%89%BEhas"><span class="nav-number">12.4.</span> <span class="nav-text">查找has</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B8%85%E9%99%A4clear"><span class="nav-number">12.5.</span> <span class="nav-text">清除clear</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8Proxy%E8%BF%9B%E8%A1%8C%E9%A2%84%E5%A4%84%E7%90%86"><span class="nav-number">13.</span> <span class="nav-text">用Proxy进行预处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A3%B0%E6%98%8EProxy"><span class="nav-number">13.1.</span> <span class="nav-text">声明Proxy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#get%E5%B1%9E%E6%80%A7"><span class="nav-number">13.2.</span> <span class="nav-text">get属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#set%E5%B1%9E%E6%80%A7"><span class="nav-number">13.3.</span> <span class="nav-text">set属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#apple%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">13.4.</span> <span class="nav-text">apple的使用</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
