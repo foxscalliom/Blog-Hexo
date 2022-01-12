@@ -634,7 +634,7 @@ livere_uid: # <your_uid>
 gitalk:
   enable: true
   github_id: foxscalliom  # GitHub repo owner
-  repo: https://github.com/foxscalliom/Blog-Hexo.git # Repository name to store issues
+  repo: Blog-Hexo # Repository name to store issues
   client_id: 2be93ecc13442d31d030 # GitHub Application Client ID
   client_secret: 4fa40343eb33997d3141277e00993d868e5e8979 # GitHub Application Client Secret
   admin_user: foxscalliom # GitHub repo owner and collaborators, only these guys can initialize gitHub issues
