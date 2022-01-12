@@ -59,7 +59,7 @@ footer:
     # Icon name in Font Awesome. See: https://fontawesome.com/icons
     name: fa fa-heart
     # If you want to animate the icon, set it to true.
-    animated: false
+    animated: true
     # Change the color of icon, using Hex Code.
     color: "#ff0000"
 
@@ -167,7 +167,7 @@ avatar:
   # If true, the avatar will be dispalyed in circle.
   rounded: false
   # If true, the avatar will be rotated with the cursor.
-  rotated: false
+  rotated: true
 
 # Posts / Categories / Tags in sidebar.
 site_state: true
@@ -295,10 +295,10 @@ related_posts:
 # Post edit
 # Dependencies: https://github.com/hexojs/hexo-deployer-git
 post_edit:
-  enable: false
-  url: https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name # Link for view source
+  enable: true
+  #url: https://github.com/foxscalliom/Blog-Hexo/tree/branch-name/subdirectory-name # Link for view source
   #url: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name # Link for fork & edit
-
+  url: https://github.com/foxscalliom/Blog-Hexo/edit/main/source/
 # Show previous post and next post in post footer if exists
 # Available values: left | right | false
 post_navigation: left
@@ -354,7 +354,7 @@ codeblock:
   # Code Highlight theme
   # Available values: normal | night | night eighties | night blue | night bright | solarized | solarized dark | galactic
   # See: https://github.com/chriskempson/tomorrow-theme
-  highlight_theme: normal
+  highlight_theme: night eighties
   # Add copy button on codeblock
   copy_button:
     enable: true
@@ -368,11 +368,11 @@ back2top:
   # Back to top in sidebar.
   sidebar: false
   # Scroll percent label in b2t button.
-  scrollpercent: false
+  scrollpercent: true
 
 # Reading progress bar
 reading_progress:
-  enable: false
+  enable: true
   # Available values: top | bottom
   position: top
   color: "#37c6c0"
@@ -380,7 +380,7 @@ reading_progress:
 
 # Bookmark Support
 bookmark:
-  enable: false
+  enable: true
   # Customize the color of the bookmark.
   color: "#222"
   # If auto, save the reading progress when closing the page or clicking the bookmark-icon.

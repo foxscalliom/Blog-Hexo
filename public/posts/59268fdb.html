@@ -21,7 +21,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"www.i100.xyz","root":"/","scheme":"Gemini","version":"7.8.0","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"www.i100.xyz","root":"/","scheme":"Gemini","version":"7.8.0","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="1. 安装 nodejs 1.1 使用 EPEL 安装EPEL（Extra Packages for Enterprise Linux）企业版 Linux 的额外软件包，是 Fedora 小组维护的一个软件仓库项目，为 RHEL&#x2F;CentOS 提供他们默认不提供的软件包。先确认系统是否已经安装了 epel-release 包： 1$ yum info epel-release">
@@ -181,6 +181,8 @@
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
 
 
     <main class="main">
@@ -208,7 +210,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          在centos7安装nodejs并升级nodejs版本
+          在centos7安装nodejs并升级nodejs版本<span class="exturl post-edit-link" data-url="aHR0cHM6Ly9naXRodWIuY29tL2ZveHNjYWxsaW9tL0Jsb2ctSGV4by9lZGl0L21haW4vc291cmNlL19wb3N0cy/lnKhjZW50b3M35a6J6KOFbm9kZWpz5bm25Y2H57qnbm9kZWpz54mI5pysLm1k" title="编辑"><i class="fa fa-pencil-alt"></i></span>
         </h1>
 
         <div class="post-meta">
@@ -485,6 +487,8 @@
 
 
 <script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
 
 
 
