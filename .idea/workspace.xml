@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8db4853-c724-4c70-a889-c10fb506d824" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/.node-xmlhttprequest-sync-4357" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/archives/2022/01/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/2022/01/index.html" afterDir="false" />
@@ -12,7 +11,6 @@
       <change beforePath="$PROJECT_DIR$/public/categories/Git/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/categories/Git/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/categories/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/categories/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/categories/前端/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/categories/前端/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/posts/27f7e408.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/posts/27f7e408.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/posts/2a8cc5d6.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/posts/2a8cc5d6.html" afterDir="false" />
@@ -21,8 +19,6 @@
       <change beforePath="$PROJECT_DIR$/public/posts/932a8af7.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/posts/932a8af7.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/posts/acc3d3b0.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/posts/acc3d3b0.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/posts/e38dcee3.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/posts/e38dcee3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/search.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/search.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/sitemap.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/tags/centos/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/centos/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/tags/github/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/github/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/tags/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/index.html" afterDir="false" />
@@ -76,7 +72,7 @@
       <updated>1641917154717</updated>
       <workItem from="1641917157587" duration="1553000" />
       <workItem from="1641918725576" duration="5539000" />
-      <workItem from="1641995413405" duration="3657000" />
+      <workItem from="1641995413405" duration="4498000" />
     </task>
     <task id="LOCAL-00001" summary="完成了优雅使用ES6">
       <created>1641920135387</created>
