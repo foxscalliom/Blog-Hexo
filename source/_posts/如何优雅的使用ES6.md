@@ -83,6 +83,7 @@ let res = blog.startsWith(i100)
 ```js
 let res = blog.endsWith(i100)
 ```
+
 ## 新增数组知识
 ### JSON格式转换
 特殊的json格式都可以轻松使用ES6的语法转变成数组
@@ -114,6 +115,7 @@ let res = arr.find(function(value, index, arr) {
   return value > 2;
 })
 ```
+
 ### fill()实例方法
 fill()也是一个实例方法，它的作用是把数组进行填充，它接收三个参数，第一个参数是填充的变量，第二个是开始填充的位置，第三个是填充到的位置。
 ```js
@@ -130,6 +132,7 @@ for (let item of arr) {
   console.log('i100',item);
 }
 ```
+
 for…of数组索引:有时候开发中是需要数组的索引的，那我们可以使用下面的代码输出数组索引
 ```js
 let arr = ['i100','百里','博客'];
@@ -227,6 +230,7 @@ let arr1 = ['i100','百里','博客'];
 console.log('i100',0 in arr1) // true
 ```
 > 这里的0指的是数组下标位置是否为空。
+
 ### 数组遍历用法
 - `forEach`
 ```js
@@ -264,6 +268,7 @@ let arr = ['i100','百里','博客'];
 console.log('i100',arr.toString());
 ```
 > 转换时只是是用逗号隔开了。
+
 ## ES6对象
 对象对于Javascript是非常重要的。在ES6中对象有了很多新特性。
 ###对象赋值
@@ -309,6 +314,7 @@ let c={c:'c'}
 let d=Object.assign(a,b,c);
 console.log('i100',d);
 ```
+
 ## Symbol在对象的作用
 ### 声明Symbol
 ```js
@@ -354,6 +360,7 @@ for(let item in obj) {
 }
 console.log('i100',obj);
 ```
+
 ## Set数据结构
 > Set数据结构，注意这里不是数据类型，而是数据结构。它是ES6中新的东西，并且很有用处。Set的数据结构是以数组的形式构建的。
 ### Set声明
@@ -406,6 +413,7 @@ console.log('i100',setArr.size);
 let setArr = new Set(['i100','百里','博客']);
 setArr.forEach((value)=>console.log(value));
 ```
+
 ## Map数据结构
 在一些构建工具中是非常喜欢使用map这种数据结构来进行配置的，因为map是一种灵活，简单的适合一对一查找的数据结构。
 ```js
@@ -488,6 +496,7 @@ get属性是在你得到某对象属性值时预处理的方法，他接受三�
 - target：得到的目标值
 - key：目标的key值，相当于对象的属性
 - property：这个不太常用，用法还在研究中。
+
 ### set属性
 set属性是值你要改变Proxy属性值时，进行的预先处理。它接收四个参数。
 - target:目标值。
@@ -514,6 +523,7 @@ console.log('i100',pro.name);
 pro.name = '李四';
 console.log('i100',pro.name);
 ```
+
 ### apple的使用
 apply的作用是调用内部的方法，它使用在方法体是一个匿名函数时。
 ```js
@@ -579,6 +589,7 @@ new Promise(step1).then(function (val) {
     return val;
 })
 ```
+
 ## class类的使用
 >在ES5中经常使用方法或者对象去模拟类的使用，虽然可以实现功能，但是代码并不优雅，ES6为我们提供了类的使用。需要注意的是我们在写类的时候和ES5中的对象和构造函数要区分开来，不要学混了。
 ### 类的声明
@@ -641,6 +652,7 @@ i100.name('百里')
 在ES5中我们要进行模块华操作需要引入第三方类库，随着前后端分离，前端的业务日渐复杂，ES6为我们增加了模块话操作。模块化操作主要包括两个方面。
 - export :负责进行模块化，也是模块的输出。
 - import : 负责把模块引，也是模块的引入操作。
+
 ### export的用法
 export可以让我们把变量，函数，对象进行模块话，提供外部调用接口，让外部进行引用。先来看个最简单的例子，把一个变量模块化。
 新建一个temp.js文件，然后在文件中输出一个模块变量
