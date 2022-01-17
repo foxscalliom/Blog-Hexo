@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a8db4853-c724-4c70-a889-c10fb506d824" name="变更" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/next/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/next/_config.yml" afterDir="false" />
-    </list>
+    <list default="true" id="a8db4853-c724-4c70-a889-c10fb506d824" name="变更" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,7 +48,7 @@
       <updated>1641917154717</updated>
       <workItem from="1641917157587" duration="1553000" />
       <workItem from="1641918725576" duration="5539000" />
-      <workItem from="1641995413405" duration="5012000" />
+      <workItem from="1641995413405" duration="5653000" />
     </task>
     <task id="LOCAL-00001" summary="完成了优雅使用ES6">
       <created>1641920135387</created>
