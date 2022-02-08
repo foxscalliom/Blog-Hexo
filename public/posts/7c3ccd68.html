@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="google-site-verification" content="YpRS8hdjowMy8a337Dv_95eWN9qoZ0sFN2hP4YjpTFg">
+  <meta name="baidu-site-verification" content="code-uCQDzWYPeZ">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.i100.xyz","root":"/","scheme":"Gemini","version":"7.8.0","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="简述 昨天我因为要回老家，所以我想用手机写博客， 于是就可以搭建起来，搭建手机的环境其实很简单， 需要下载一个和一个termux  软件安装下载地址方式一: 先推荐安装f-droid下载地址，在F-Droid搜索termux安装方式二:Googleplay下载地址f-droid下载地址酷安下载地址 termux初始化">
+<meta property="og:type" content="article">
+<meta property="og:title" content="手机termux写hexo博客">
+<meta property="og:url" content="https://www.i100.xyz/posts/7c3ccd68.html">
+<meta property="og:site_name" content="百里の博客">
+<meta property="og:description" content="简述 昨天我因为要回老家，所以我想用手机写博客， 于是就可以搭建起来，搭建手机的环境其实很简单， 需要下载一个和一个termux  软件安装下载地址方式一: 先推荐安装f-droid下载地址，在F-Droid搜索termux安装方式二:Googleplay下载地址f-droid下载地址酷安下载地址 termux初始化">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://image.3001.net/images/20200418/1587207468173.png">
+<meta property="article:published_time" content="2020-08-27T02:37:00.000Z">
+<meta property="article:modified_time" content="2022-02-08T10:14:45.790Z">
+<meta property="article:author" content="百里">
+<meta property="article:tag" content="前端博客,JavaScript,html5,css3,Jquery,NodeJs,Ubuntu,Vue,ES6">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://image.3001.net/images/20200418/1587207468173.png">
+
+<link rel="canonical" href="https://www.i100.xyz/posts/7c3ccd68.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>手机termux写hexo博客 | 百里の博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="百里の博客" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">百里の博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">倘只看书,便变成书橱</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.i100.xyz/posts/7c3ccd68.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.jpg">
+      <meta itemprop="name" content="百里">
+      <meta itemprop="description" content="我好像一只牛,吃的是草,挤出的是牛奶">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="百里の博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          手机termux写hexo博客<span class="exturl post-edit-link" data-url="aHR0cHM6Ly9naXRodWIuY29tL2ZveHNjYWxsaW9tL0Jsb2ctSGV4by9lZGl0L21haW4vc291cmNlL19wb3N0cy/kvb/nlKjmiYvmnLrkvJjpm4XnvJblhpnljZrlrqIubWQ=" title="编辑"><i class="fa fa-pencil-alt"></i></span>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-27 10:37:00" itemprop="dateCreated datePublished" datetime="2020-08-27T10:37:00+08:00">2020-08-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-02-08 18:14:45" itemprop="dateModified" datetime="2022-02-08T18:14:45+08:00">2022-02-08</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h2><p> 昨天我因为要回老家，所以我想用手机写博客，<br> 于是就可以搭建起来，搭建手机的环境其实很简单，<br> 需要下载一个和一个termux </p>
+<h2 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h2><h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>方式一: 先推荐安装<br><span class="exturl" data-url="aHR0cHM6Ly9mLWRyb2lkLm9yZy9wYWNrYWdlcy9jb20udGVybXV4Lw==">f-droid<i class="fa fa-external-link-alt"></i></span>下载地址，在F-Droid搜索termux安装<br>方式二:<br><span class="exturl" data-url="aHR0cHM6Ly9wbGF5Lmdvb2dsZS5jb20vc3RvcmUvYXBwcy9kZXRhaWxzP2lkPWNvbS50ZXJtdXg=">Googleplay<i class="fa fa-external-link-alt"></i></span>下载地址<br><span class="exturl" data-url="aHR0cHM6Ly9mLWRyb2lkLm9yZy9wYWNrYWdlcy9jb20udGVybXV4Lw==">f-droid<i class="fa fa-external-link-alt"></i></span>下载地址<br><span class="exturl" data-url="aHR0cHM6Ly93d3cuY29vbGFway5jb20vYXBrL2NvbS50ZXJtdXg=">酷安<i class="fa fa-external-link-alt"></i></span>下载地址</p>
+<h2 id="termux初始化"><a href="#termux初始化" class="headerlink" title="termux初始化"></a>termux初始化</h2><span id="more"></span>
+<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><p>第一次启动Termux的时候需要从远程服务器加载数据，然而可能会遇到这种问题，可能会碰到这个问题</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Ubable to install</span><br><span class="line">Termux was unable to install the bootstrap packages.</span><br><span class="line">Check your network connection and try again.</span><br></pre></td></tr></table></figure>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>    VPN 全局代理 （成功率很高）<br>    如果你是 WiFi 的话尝试切换到运营商流量 （有一定成功率）<br>    ① Google Play ② F-Droid ③ 酷安 根据这个顺序重复1、2操作</p>
+<h2 id="termux环境搭建"><a href="#termux环境搭建" class="headerlink" title="termux环境搭建"></a>termux环境搭建</h2><h3 id="更换国内源"><a href="#更换国内源" class="headerlink" title="更换国内源"></a>更换国内源</h3><p>可以使用如下命令自动替换官方源为 TUNA 镜像源</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">sed -i &#x27;s@^\(deb.*stable main\)$@#\1\ndeb https://mirrors.tuna.tsinghua.edu.cn/termux/termux-packages-24 stable main@&#x27; $PREFIX/etc/apt/sources.list</span><br><span class="line"></span><br><span class="line">sed -i &#x27;s@^\(deb.*games stable\)$@#\1\ndeb https://mirrors.tuna.tsinghua.edu.cn/termux/game-packages-24 games stable@&#x27; $PREFIX/etc/apt/sources.list.d/game.list</span><br><span class="line"></span><br><span class="line">sed -i &#x27;s@^\(deb.*science stable\)$@#\1\ndeb https://mirrors.tuna.tsinghua.edu.cn/termux/science-packages-24 science stable@&#x27; $PREFIX/etc/apt/sources.list.d/science.list</span><br><span class="line"></span><br><span class="line">pkg update</span><br></pre></td></tr></table></figure>
+<h3 id="安装基础工具"><a href="#安装基础工具" class="headerlink" title="安装基础工具"></a>安装基础工具</h3><p>安装过程中可能需要等10分钟</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pkg update</span><br><span class="line">pkg install vim curl wget git tree -y</span><br></pre></td></tr></table></figure>
+<h3 id="访问外部存储"><a href="#访问外部存储" class="headerlink" title="访问外部存储"></a>访问外部存储</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh -c &quot;$(curl -fsSL https://html.sqlsec.com/termux-install.sh)&quot;  </span><br></pre></td></tr></table></figure>
+<p><img data-src="https://image.3001.net/images/20200418/1587207468173.png"><br>出现这个既完成</p>
+<h3 id="重新获取访问权限"><a href="#重新获取访问权限" class="headerlink" title="重新获取访问权限"></a>重新获取访问权限</h3><p><code>termux-setup-storage</code></p>
+<h2 id="安装-Nodejs"><a href="#安装-Nodejs" class="headerlink" title="安装 Nodejs"></a>安装 Nodejs</h2><h3 id="安装长期稳定版本"><a href="#安装长期稳定版本" class="headerlink" title="安装长期稳定版本"></a>安装长期稳定版本</h3><p><code>pkg install nodejs-lts</code></p>
+<h3 id="或者你想要v14-0运行这个"><a href="#或者你想要v14-0运行这个" class="headerlink" title="或者你想要v14.0运行这个"></a>或者你想要v14.0运行这个</h3><p><code>pkg install nodejs</code></p>
+<h3 id="检查安装情况"><a href="#检查安装情况" class="headerlink" title="检查安装情况"></a>检查安装情况</h3><p><code>node -V npm -V</code></p>
+<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p><code>npm install hexo-cli -g</code><br><code>hexo -v</code></p>
+<h2 id="Hexo-基本部署"><a href="#Hexo-基本部署" class="headerlink" title="Hexo 基本部署"></a>Hexo 基本部署</h2><h3 id="首先切换到手机内部存储空间"><a href="#首先切换到手机内部存储空间" class="headerlink" title="首先切换到手机内部存储空间"></a>首先切换到手机内部存储空间</h3><p>这是我的手机存储空间目录<br><code>/data/data/com.termux/files/home/storage/shared/2/myblog</code><br>2表示我的手机home下的2文件夹</p>
+<h3 id="默认目录是家目录如"><a href="#默认目录是家目录如" class="headerlink" title="默认目录是家目录如"></a>默认目录是家目录如</h3><p><code>/data/data/com.termux/files/home</code></p>
+<h3 id="直接使用命令"><a href="#直接使用命令" class="headerlink" title="直接使用命令"></a>直接使用命令</h3><p>切换手机home目录<br><code>/data/data/com.termux/files/home/storage/shared/</code></p>
+<h3 id="然后自己创建一个myblog文件夹"><a href="#然后自己创建一个myblog文件夹" class="headerlink" title="然后自己创建一个myblog文件夹"></a>然后自己创建一个myblog文件夹</h3><p><code>cd myblog</code></p>
+<h3 id="使用电脑准备好的hexo完整压缩包"><a href="#使用电脑准备好的hexo完整压缩包" class="headerlink" title="使用电脑准备好的hexo完整压缩包"></a>使用电脑准备好的hexo完整压缩包</h3><p>先发送到QQ，QQ在下载，默认存储位置是<br>信号不好，图片上传不了，若还是不懂在私聊我</p>
+<h3 id="将其解压"><a href="#将其解压" class="headerlink" title="将其解压"></a>将其解压</h3><p><code>cd 项目名</code><br>运行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line"></span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<p>若无报错则完成<br>手机浏览器打开访问<br><code>http://localhost:4000</code><br>结束</p>
+<h2 id="Hexo-基本部署-1"><a href="#Hexo-基本部署-1" class="headerlink" title="Hexo 基本部署"></a>Hexo 基本部署</h2><p><code>hexo init  </code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#生成静态文件 启动Hexo</span><br><span class="line">hexo g</span><br><span class="line">hexo s      </span><br></pre></td></tr></table></figure>
+
+
+
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/ce6df632.html" rel="prev" title="Hexo使用Coding自动部署">
+      <i class="fa fa-chevron-left"></i> Hexo使用Coding自动部署
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/d0a707ad.html" rel="next" title="电脑或手机实用软件(持续更新)">
+      电脑或手机实用软件(持续更新) <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">简述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">软件安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80"><span class="nav-number">2.1.</span> <span class="nav-text">下载地址</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#termux%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">3.</span> <span class="nav-text">termux初始化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">3.1.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="nav-number">3.2.</span> <span class="nav-text">解决办法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#termux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="nav-number">4.</span> <span class="nav-text">termux环境搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E6%8D%A2%E5%9B%BD%E5%86%85%E6%BA%90"><span class="nav-number">4.1.</span> <span class="nav-text">更换国内源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7"><span class="nav-number">4.2.</span> <span class="nav-text">安装基础工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE%E5%A4%96%E9%83%A8%E5%AD%98%E5%82%A8"><span class="nav-number">4.3.</span> <span class="nav-text">访问外部存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E6%96%B0%E8%8E%B7%E5%8F%96%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90"><span class="nav-number">4.4.</span> <span class="nav-text">重新获取访问权限</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-Nodejs"><span class="nav-number">5.</span> <span class="nav-text">安装 Nodejs</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E9%95%BF%E6%9C%9F%E7%A8%B3%E5%AE%9A%E7%89%88%E6%9C%AC"><span class="nav-number">5.1.</span> <span class="nav-text">安装长期稳定版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%96%E8%80%85%E4%BD%A0%E6%83%B3%E8%A6%81v14-0%E8%BF%90%E8%A1%8C%E8%BF%99%E4%B8%AA"><span class="nav-number">5.2.</span> <span class="nav-text">或者你想要v14.0运行这个</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A3%80%E6%9F%A5%E5%AE%89%E8%A3%85%E6%83%85%E5%86%B5"><span class="nav-number">5.3.</span> <span class="nav-text">检查安装情况</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Hexo"><span class="nav-number">6.</span> <span class="nav-text">安装Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo-%E5%9F%BA%E6%9C%AC%E9%83%A8%E7%BD%B2"><span class="nav-number">7.</span> <span class="nav-text">Hexo 基本部署</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A6%96%E5%85%88%E5%88%87%E6%8D%A2%E5%88%B0%E6%89%8B%E6%9C%BA%E5%86%85%E9%83%A8%E5%AD%98%E5%82%A8%E7%A9%BA%E9%97%B4"><span class="nav-number">7.1.</span> <span class="nav-text">首先切换到手机内部存储空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%BB%98%E8%AE%A4%E7%9B%AE%E5%BD%95%E6%98%AF%E5%AE%B6%E7%9B%AE%E5%BD%95%E5%A6%82"><span class="nav-number">7.2.</span> <span class="nav-text">默认目录是家目录如</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B4%E6%8E%A5%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">7.3.</span> <span class="nav-text">直接使用命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%84%B6%E5%90%8E%E8%87%AA%E5%B7%B1%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AAmyblog%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="nav-number">7.4.</span> <span class="nav-text">然后自己创建一个myblog文件夹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E7%94%B5%E8%84%91%E5%87%86%E5%A4%87%E5%A5%BD%E7%9A%84hexo%E5%AE%8C%E6%95%B4%E5%8E%8B%E7%BC%A9%E5%8C%85"><span class="nav-number">7.5.</span> <span class="nav-text">使用电脑准备好的hexo完整压缩包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%86%E5%85%B6%E8%A7%A3%E5%8E%8B"><span class="nav-number">7.6.</span> <span class="nav-text">将其解压</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo-%E5%9F%BA%E6%9C%AC%E9%83%A8%E7%BD%B2-1"><span class="nav-number">8.</span> <span class="nav-text">Hexo 基本部署</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="百里"
+      src="/images/head.jpg">
+  <p class="site-author-name" itemprop="name">百里</p>
+  <div class="site-description" itemprop="description">我好像一只牛,吃的是草,挤出的是牛奶</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">百里</span>
+</div>
+  <div class="powered-by">由 <span class="exturl theme-link" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl theme-link" data-url="aHR0cHM6Ly90aGVtZS1uZXh0Lm9yZw==">NexT.Gemini</span> 强力驱动
+  </div>
+<div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv" style='display:none'>
+    本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+    <span class="post-meta-divider">|</span>
+</span>
+<span id="busuanzi_container_site_uv" style='display:none'>
+    有<span id="busuanzi_value_site_uv"></span>人看过我的博客啦
+</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+  <script data-pjax>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '2be93ecc13442d31d030',
+      clientSecret: '4fa40343eb33997d3141277e00993d868e5e8979',
+      repo        : 'Blog-Hexo',
+      owner       : 'foxscalliom',
+      admin       : ['foxscalliom'],
+      id          : '1e2ece770a47a3e7efc6703b985db6e3',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+    </div>
+</body>
+</html>

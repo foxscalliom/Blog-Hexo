@@ -2,36 +2,72 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.i100.xyz/posts/27f7e408.html</loc>
+    <loc>https://www.i100.xyz/posts/8588bfe2.html</loc>
     
-    <lastmod>2022-01-17</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.i100.xyz/posts/932a8af7.html</loc>
-    
-    <lastmod>2022-01-17</lastmod>
+    <lastmod>2022-02-08</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.i100.xyz/posts/e38dcee3.html</loc>
+    <loc>https://www.i100.xyz/posts/b3352ee7.html</loc>
     
-    <lastmod>2022-01-12</lastmod>
+    <lastmod>2022-02-08</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.i100.xyz/posts/59268fdb.html</loc>
+    <loc>https://www.i100.xyz/posts/64b747df.html</loc>
     
-    <lastmod>2022-01-12</lastmod>
+    <lastmod>2022-02-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.i100.xyz/posts/82baa9c8.html</loc>
+    
+    <lastmod>2022-02-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.i100.xyz/posts/373e05eb.html</loc>
+    
+    <lastmod>2022-02-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.i100.xyz/posts/e287b8f6.html</loc>
+    
+    <lastmod>2022-02-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.i100.xyz/posts/ce6df632.html</loc>
+    
+    <lastmod>2022-02-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.i100.xyz/posts/e9295853.html</loc>
+    
+    <lastmod>2022-02-08</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -40,16 +76,43 @@
   <url>
     <loc>https://www.i100.xyz/posts/4a17b156.html</loc>
     
-    <lastmod>2022-01-09</lastmod>
+    <lastmod>2022-02-08</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.i100.xyz/posts/acc3d3b0.html</loc>
+    <loc>https://www.i100.xyz/posts/d0a707ad.html</loc>
     
-    <lastmod>2022-01-09</lastmod>
+    <lastmod>2022-02-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.i100.xyz/posts/7c3ccd68.html</loc>
+    
+    <lastmod>2022-02-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.i100.xyz/posts/f78571c9.html</loc>
+    
+    <lastmod>2022-02-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.i100.xyz/posts/7db1791f.html</loc>
+    
+    <lastmod>2022-02-08</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -76,61 +139,12 @@
 
   <url>
     <loc>https://www.i100.xyz/</loc>
-    <lastmod>2022-01-17</lastmod>
+    <lastmod>2022-02-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
-  <url>
-    <loc>https://www.i100.xyz/tags/github/</loc>
-    <lastmod>2022-01-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.i100.xyz/tags/%E4%BC%98%E9%9B%85/</loc>
-    <lastmod>2022-01-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.i100.xyz/tags/centos/</loc>
-    <lastmod>2022-01-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.i100.xyz/tags/nginx/</loc>
-    <lastmod>2022-01-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
 
-  
-  <url>
-    <loc>https://www.i100.xyz/categories/Git/</loc>
-    <lastmod>2022-01-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.i100.xyz/categories/ES6/</loc>
-    <lastmod>2022-01-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.i100.xyz/categories/%E5%89%8D%E7%AB%AF/</loc>
-    <lastmod>2022-01-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
   
 </urlset>

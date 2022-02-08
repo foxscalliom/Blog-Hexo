@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="google-site-verification" content="YpRS8hdjowMy8a337Dv_95eWN9qoZ0sFN2hP4YjpTFg">
+  <meta name="baidu-site-verification" content="code-uCQDzWYPeZ">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.i100.xyz","root":"/","scheme":"Gemini","version":"7.8.0","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="六十句心灵鸡汤1、 每件小事都尽心尽力而为，这就是成功的秘诀。 2、 忽视当前一刹那的人，就是等于虚掷了他所有的一切。 3、 不管我们曾经遇见还是错过，总有些人和事让我们难以忘却。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="六十句心灵鸡汤">
+<meta property="og:url" content="https://www.i100.xyz/posts/82baa9c8.html">
+<meta property="og:site_name" content="百里の博客">
+<meta property="og:description" content="六十句心灵鸡汤1、 每件小事都尽心尽力而为，这就是成功的秘诀。 2、 忽视当前一刹那的人，就是等于虚掷了他所有的一切。 3、 不管我们曾经遇见还是错过，总有些人和事让我们难以忘却。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-01-06T00:00:00.000Z">
+<meta property="article:modified_time" content="2022-02-08T10:15:34.492Z">
+<meta property="article:author" content="百里">
+<meta property="article:tag" content="前端博客,JavaScript,html5,css3,Jquery,NodeJs,Ubuntu,Vue,ES6">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://www.i100.xyz/posts/82baa9c8.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>六十句心灵鸡汤 | 百里の博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="百里の博客" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">百里の博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">倘只看书,便变成书橱</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.i100.xyz/posts/82baa9c8.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.jpg">
+      <meta itemprop="name" content="百里">
+      <meta itemprop="description" content="我好像一只牛,吃的是草,挤出的是牛奶">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="百里の博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          六十句心灵鸡汤<span class="exturl post-edit-link" data-url="aHR0cHM6Ly9naXRodWIuY29tL2ZveHNjYWxsaW9tL0Jsb2ctSGV4by9lZGl0L21haW4vc291cmNlL19wb3N0cy90YW5nMS5tZA==" title="编辑"><i class="fa fa-pencil-alt"></i></span>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-01-06 08:00:00" itemprop="dateCreated datePublished" datetime="2022-01-06T08:00:00+08:00">2022-01-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-02-08 18:15:34" itemprop="dateModified" datetime="2022-02-08T18:15:34+08:00">2022-02-08</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="六十句心灵鸡汤"><a href="#六十句心灵鸡汤" class="headerlink" title="六十句心灵鸡汤"></a>六十句心灵鸡汤</h2><p>1、 每件小事都尽心尽力而为，这就是成功的秘诀。</p>
+<p>2、 忽视当前一刹那的人，就是等于虚掷了他所有的一切。</p>
+<p>3、 不管我们曾经遇见还是错过，总有些人和事让我们难以忘却。</p>
+<span id="more"></span>
+<p>4、 人生的旅途中，你总有那么一段时间，需要自己走，需要自己扛。</p>
+<p>5、 在这个世上，生活不会是一路乘风破浪，坎坷不平，生活现实而且残酷。</p>
+<p>6、 让珊瑚去远离惊涛骇浪的侵蚀吗？那么也就无异是去将它们的美丽葬送。</p>
+<p>7、 能改的，叫做缺点，不能改的，叫做弱点。</p>
+<p>8、 如果可恨的挫折使得你尝到苦果，朋友，那么奋起必是将让你尝到人生的欢乐。</p>
+<p>9、 所谓“逆境”，逆着我们脾气的就算逆境。逆境如考试，可以衡量修行的功夫。</p>
+<p>10、 无尽的人海中，我们相聚又分离。但愿我们的友谊冲破时空，随岁月不断增长。</p>
+<p>11、 当你快乐时，你要想这快乐不是永恒的。当你痛苦时，你要想这痛苦也不是永恒的。</p>
+<p>12、 真正的智慧不是预知未来，而是知道现在，享受现在的一切，不必担心现在和将来。</p>
+<p>13、 当她说你好而拒绝你的时候，其实就是没看上对方而已。懂，是世界上最温情的语言。</p>
+<p>14、 “活在当下”，那就是在刹那间去领会生活的美及喜悦，而不去眷恋它所带来的快感。</p>
+<p>15、 有时候，你想证明给一万个人看，到后来，你发现只得到了一个明白的人，那就够了。</p>
+<p>16、 以前只是一种经历与感觉，而不是证据，不需要为以前的喜欢付出现在或以后的责任。</p>
+<p>17、 拼命对你好的人，一瞬间抽离然后冷淡，就算这是你不喜欢的人，你都会犯贱地对他产生了感觉。</p>
+<p>18、 每一条路都是荒径，每一个人都是过客，每一片记忆都是曾经。终于明白，有些路，只能一个人走。</p>
+<p>19、 无论多别扭，你都要学会抽身而退。放下吧，忘记吧，一转身，一抬眼，你就会看见远处风景迷绕。</p>
+<p>20、 以平常之心，接受已发生的事。以宽阔之心，包容对不起我们的人。以不变之心，坚持正确的理念。</p>
+<p>21、 时光把过去浓缩成记忆，你可以回首，但无法回转，一切遇到的、诀别的、拥有的、失去的，都无可更改。</p>
+<p>22、 所有负面的情绪和心态，对于你所不满的人和事情不起一点作用，而对于你自己和你的亲人友人起大作用！</p>
+<p>23、 拿得起，放得下，人生得失很正常；站得高，望得远，是非恩怨莫挂怀；想得开，看得透，生活困惑自然开。</p>
+<p>24、 真正的幸福那是脱离物质追求的一种心灵感受，幸福不受地位、权势、财富的约束，是人生路上坚强的表现。</p>
+<p>25、 你永远不会知道，这一次会不会是最后一次；你也永远不会在发生时知道，这将对你的生活产生什么样的改变。</p>
+<p>26、 生命就像是一种回音，你送出了什么它就送回什么，你播种了什么就是会收获什么，你给予什么就会得到什么。</p>
+<p>27、 咖啡的苦与甜，不在于怎么搅拌，而在于是否放糖；一段伤痛，不在于怎么忘记，而在于是否有勇气重新开始。</p>
+<p>28、 感情随着时间沉淀，感觉随着时间消失。终其是不同的物种，所以，谁又能明白谁的深爱，谁又能理解谁的离开。</p>
+<p>29、 被大多数人嘲笑的人，不是疯子，就是天才。疯子与天才的区别在于：疯子不知别人正在嘲笑自己，而天才很清楚。</p>
+<p>30、 在一起是一种缘分，不要轻易让喜欢你的人哭泣伤心，好好珍惜在一起的每一分钟，美好的回忆应该留给快乐和欢笑。</p>
+<p>31、 “生气不如争气”，那些琐碎的、令人心烦的事，根本不值得自己去生气。学会控制自己的情绪，人生才会优雅从容。</p>
+<p>32、 本可选择平坦磊落的路途，你却选择了荆棘丛生，崎岖危险。本可选择云淡风轻的路过，你却选择了飞蛾扑火，不计后果。</p>
+<p>33、 拥有一份随缘之心，你就会发现，天空中无论是阴云密布，还是阳光灿烂；人生道路上无论坎坷还是畅达，心中总会拥有一份平静和恬淡。</p>
+<p>34、 生活本不苦，苦的是欲望过多；其实，我们每个人都是天地间的过客，一个人的声音和足迹，如果能被另一个人深深的怀念和铭记，这就是永恒。</p>
+<p>35、 找不到答案的时候，就独自出去看一看这个世界。人生，要懂得感恩，感恩，不一定是感谢大恩大德，而是一种生活态度，是一种善良的人性美。</p>
+<p>36、 生活的本真，琐琐碎碎；生活的滋味，苦苦甜甜；生活的过程，反反复复；生活的节奏，忙忙碌碌；生活的旋律，喜喜忧忧；生活的心情，起起伏伏。</p>
+<p>37、 每一个强大的人，都咬着牙度过一段没人帮忙，没人支持，没人嘘寒问暖的日子。过去了，这就是你的成人礼，过不去，求饶了，这就是你的无底洞。</p>
+<p>38、 无论几点去睡的，反正一天又过去了。无论终点在哪里，反正一年又过去了。照顾好自己，如果尚有余力，记得保护美好的东西。不畏不怖不怂不退不磨叽，大家共勉。</p>
+<p>39、 很多时候，我们更需要做的就是闭上自己愿意争辩的嘴，放下所谓高贵的自尊，承认自己曾经所犯的错误 , 下定决心努力去修正它。这并不代表放弃，而是收获了一份成长。</p>
+<p>40、 人生如一本书，应该多一些出色的细节，少一些乏味的字眼；人生如一支歌，应该多一些昂扬的旋律，少一些忧伤的音符；人生如一幅画，应该多一些亮丽的色彩，少一些昏暗的色调。</p>
+<p>41、 当我们置身于错综复杂的社会中，对任何一件事情如果没有通达它的真相，很容易随波逐流，心随境转；假如能够了悟到真相，即使外境再绚丽，也不会被它迷惑，犹如出于淤泥的莲花，一尘不染。</p>
+<p>42、 所谓君子之交淡如水，是因为双方品行端正，内心充盈，懂得自省，他们不热衷狂欢，善于处理孤独，在与人交流时有轻微障碍。绝不是平日疏于联系，为了在有事相求时不想太难以启齿而找的借口。</p>
+<p>43、 也许一个人最好的样子就是静一点。哪怕一个人生活。穿越一个又一个城市，走过一条又一条街道，仰望一片又一片天空，见证一场又一场离别。然后淡下来，于是终于可以坦然的说，我终于不那么执着了。</p>
+<p>44、 再见你的时候，我终于是坚信你是我一生守望的人。跋涉千里阿，只是为我。可这短暂的相聚，终于是成了剪碎梦想的剪刀，让你我的心支离破碎。也许今生，我们大约只能如此两两相望了吧，雨水掩映一山的苍翠。</p>
+<p>45、 对于那个爱你的人一定是要去尊重，爱你是有原因的，接受的同时要用加倍的关爱回报，但是千万不要欺骗人家的感情，这是你用钱买不来的财富。当你轻视人家付出的情感就是等于蔑视自己，你要记住，爱人是一种美德。</p>
+<p>46、 不要把别人的闲言碎语当成礼物，因为你并不是收破烂的人。做好自己，当你真正完全投入到当下的事情中去时，不管这个事情多么简单卑微，你都能感受到无穷的乐趣。因为不够好，所以才要努力啊，不努力，你永远就是这个样子。</p>
+<p>47、 不生气要争气，不看破要突破，不嫉妒要欣赏，不托延要积极。心态决定状态，心胸决定格局，眼界决定境界。过错是短暂的遗憾，错过是永远的遗憾。生活就是在细细的回味里散发香味的，同时我们也是在用自己的双手创造着新的惊喜。</p>
+<p>48、 你若深爱一个人，就要学会阻止自己，不要把他当成全部，不要所有的话都跟他讲，不要所有的秘密都和他分享。你投入的多了，就会慢慢地忘记自己，那么最后的唯一的结局，是爱情被你抓得越紧，却逃得越远，最终只能击碎你的愿望。</p>
+<p>49、 有一天你会明白，人不能太善良，因为人们只会挑软柿子捏，如果事事都太大度和宽容，别人也不会感激你，有时候应该适当的有点脾气，对待有些人真不能太温柔和忍耐，因过分善良会让我们丢失自己的价值和尊严，过分善良也是一种傻。</p>
+<p>50、 成长是一个非常寂寞的过程，有时是因为不会做分数除法，有时是走列队的时候手臂的姿势总也摆不对，有时是因为亲密朋友的疏远……这些事根本不算什么大事，甚至自己也容易忘记。但其实每件事都像一次渗入，慢慢将自己变成现在的模样。</p>
+<p>51、 人生终将要错过一些人，无可避免。人生在世，或多或少会经历一些情感的波折。暮然回首，那些在生命中涌动过的人，在心灵深处被爱踏足过的芳草地，是否还保留着珍贵的情感借以回味逝去的时光。——只是我们终将错过了，一些可以陪伴一生的人。</p>
+<p>52、 学会与自己的伤痛和平共处，这就是成长的意义。我们永远不要期待别人的拯救，只有自己才能升华自己。自己已准备好了多少容量，方能吸引对等的人与我们相遇，否则再美好的人出现、再动人的事情降临身边，我们也没有能量去理解与珍惜，终将擦肩而过。</p>
+<p>53、 人生，从某种意义上讲，就是选择与放弃。所有的聚散离合，都是上天的旨意。逢，是缘聚，离，是缘散，没办法，长时间的相聚，只怨命运如此，没缘分，永久牵手，只怪缘分如此，一切都是命运，一切都是天意，离开后，不怨，不恨，依然好好地铭记，期盼你，安好如初。</p>
+<p>54、 单身是件会渐渐习惯的事。因为当你单身时，可以照顾好自己，自由的去玩，有各种各样的朋友，最后你会忘记爱情，忘记爱情带给你的感动。一个人单身久了，会带有雌雄同体的属性，让你自我温暖自我感动。所以，单身的人，你不是找不到爱情，而是渐渐失去了相爱的能力。</p>
+<p>55、 很多杰出的人，很早就停止上学了，(自己选择或想上但没得上)，但这些人可没停止学习，他们立刻改去更广大的社会学校，向更厉害的人学习了。你若有这种胆识，也尽可如此。但请不要误以为这些人，是因为早早停止上学而变杰出的，这就好像以为拿破仑是因为个子矮才杰出一样。</p>
+<p>56、 时光向前，人生向后。这个年代的我们，大多数人都急着往前赶。似乎，谁跑得最快，谁就会离幸福最近。佛陀说，黑暗中，你要成为自己的光。流年老去，我们终会发现，无论身处何地，那道照亮内心的光芒，其实就在心底最温暖的地方。不管我们怎么跑，跑的有多快，或多慢，它一直就在那里。</p>
+<p>57、 一切烦恼其实都是自寻烦恼。计较少了，快乐多了；压力少了轻松多了；抱怨少了舒心多了。自卑少了，自信多了；攀比少了，自在多了；复杂少了，简单多了。人有器量便有快乐，人有修养便有气质，人有爱心便是善良，人若淡然便能从容。随意心情才能平静，勤奋人生才能辉煌，豁达生活才能幸福。</p>
+<p>58、 当你很累很累的时候，你应该闭上眼睛做深呼吸，告诉自己你应该坚持得住，不要这么轻易的否定自己，谁说你没有好的未来，关于明天的事后天才知道，在一切变好之前，我们总要经历一些不开心的日子，不要因为一点瑕疵而放弃一段坚持，即使没有人为你鼓掌，也要优雅的谢幕，感谢自己认真的付出。</p>
+<p>59、 始终觉得深交过的朋友，就算因为各种难以预测的原因友谊实在维持不下去了，也尽量给对方留点面子。若对方不是做了对你伤害极其大的事，默默淡出彼此生活就好，没必要撕逼撕的太难看。两个人能处一段，都有彼此肝胆相照掏心掏肺的时候。所以绝交不出恶语，就当作是对那段好时光最后的纪念吧。</p>
+<p>60、 该得到的要付出努力抓到手，不要等待，真正属于你的机遇不多，行动永远比幻想重要；不要抱怨，要直面矛盾和问题，怨天尤人只能证明你的无能。世上没有不平的事，只有不平的心。不去怨，不去恨，淡然一切，往事如烟。经历了，醉了，醒了，碎了，结束了，忘记吧！珍惜现有的生活，幸福就在你身边。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/8588bfe2.html" rel="prev" title="自定义图床解决PicGo上传失败">
+      <i class="fa fa-chevron-left"></i> 自定义图床解决PicGo上传失败
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/64b747df.html" rel="next" title="真正的成熟，就是不动声色地做自己的摆渡人">
+      真正的成熟，就是不动声色地做自己的摆渡人 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AD%E5%8D%81%E5%8F%A5%E5%BF%83%E7%81%B5%E9%B8%A1%E6%B1%A4"><span class="nav-number">1.</span> <span class="nav-text">六十句心灵鸡汤</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="百里"
+      src="/images/head.jpg">
+  <p class="site-author-name" itemprop="name">百里</p>
+  <div class="site-description" itemprop="description">我好像一只牛,吃的是草,挤出的是牛奶</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">百里</span>
+</div>
+  <div class="powered-by">由 <span class="exturl theme-link" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl theme-link" data-url="aHR0cHM6Ly90aGVtZS1uZXh0Lm9yZw==">NexT.Gemini</span> 强力驱动
+  </div>
+<div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv" style='display:none'>
+    本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+    <span class="post-meta-divider">|</span>
+</span>
+<span id="busuanzi_container_site_uv" style='display:none'>
+    有<span id="busuanzi_value_site_uv"></span>人看过我的博客啦
+</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+  <script data-pjax>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '2be93ecc13442d31d030',
+      clientSecret: '4fa40343eb33997d3141277e00993d868e5e8979',
+      repo        : 'Blog-Hexo',
+      owner       : 'foxscalliom',
+      admin       : ['foxscalliom'],
+      id          : '120d0b403222c16551d85fde6ec3ae34',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+    </div>
+</body>
+</html>

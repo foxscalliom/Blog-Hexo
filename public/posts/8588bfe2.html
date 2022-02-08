@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="google-site-verification" content="YpRS8hdjowMy8a337Dv_95eWN9qoZ0sFN2hP4YjpTFg">
+  <meta name="baidu-site-verification" content="code-uCQDzWYPeZ">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.i100.xyz","root":"/","scheme":"Gemini","version":"7.8.0","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="经常碰到使用PicGo上传失败等问题，今天教程来了，使用自定义图床完美解决上传失败问题 准备番茄前提必须要梯子，实在不会，可以看我这篇，不需要梯子，也是白嫖，彩虹云白嫖图床教程我准备了一个手机的，小编目前没有电脑的，不过手机勉强够用 这个是GitHub仓库的下载地址Calyx 考虑到GitHub下载太慢，我还上传了一个Gitee仓库的下载地址Calyx 国外邮箱一个国外邮箱，比如google或者o">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自定义图床解决PicGo上传失败">
+<meta property="og:url" content="https://www.i100.xyz/posts/8588bfe2.html">
+<meta property="og:site_name" content="百里の博客">
+<meta property="og:description" content="经常碰到使用PicGo上传失败等问题，今天教程来了，使用自定义图床完美解决上传失败问题 准备番茄前提必须要梯子，实在不会，可以看我这篇，不需要梯子，也是白嫖，彩虹云白嫖图床教程我准备了一个手机的，小编目前没有电脑的，不过手机勉强够用 这个是GitHub仓库的下载地址Calyx 考虑到GitHub下载太慢，我还上传了一个Gitee仓库的下载地址Calyx 国外邮箱一个国外邮箱，比如google或者o">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/foxscallion11/sc1@master/2020/08/30/8465e830c590bc53557f471fd693ac56.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/foxscallion11/sc1@master/2020/08/30/5e7cf8a4161399c91fa1e07f476925e9.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/foxscallion11/sc1@master/2020/08/30/718fe22585a1e76c81f40e36c8dff4e0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/foxscallion11/sc1@master/2020/08/30/88bf179ce0c4ff69e2bfdf7d0d4f1ac5.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/foxscallion11/sc1@master/2020/08/30/c9132ca4ab1af7abae3ea5b26d636ee1.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/foxscallion11/sc1@master/2020/08/30/4ca6e781bd8bac391b2fa5081d41aeb8.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/foxscallion11/sc1@master/2020/08/30/4ca6e781bd8bac391b2fa5081d41aeb8.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/foxscallion11/sc1@master/2020/08/30/080ed058abcf77633d29b791b8bcc713.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/foxscallion11/sc1@master/2020/08/30/ecedb1d16175d2b8a301cdd0eb2a1ed8.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/foxscallion11/sc1@master/2020/08/30/dc49f6f30ea9914fa049d8398c8b1d65.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/foxscallion11/sc1@master/2020/09/01/90a444fbb8fcf346ce8f7395c2231721.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/foxscallion11/sc1@master/2020/09/01/28450c82c773b4dc76a7d8b887bfb3cf.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/foxscallion11/sc1@master/2020/09/01/3621a06f1317cab050be650ef51ffd9d.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/foxscallion11/sc1@master/2020/09/01/ab7374d4fc3dfeb541037c043bde0ded.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/foxscallion11/sc1@master/2020/09/01/5c11e7abce25e8c12088c61eaa044bc1.png">
+<meta property="article:published_time" content="2021-09-01T04:42:48.000Z">
+<meta property="article:modified_time" content="2022-02-08T10:21:00.140Z">
+<meta property="article:author" content="百里">
+<meta property="article:tag" content="前端博客,JavaScript,html5,css3,Jquery,NodeJs,Ubuntu,Vue,ES6">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/foxscallion11/sc1@master/2020/08/30/8465e830c590bc53557f471fd693ac56.png">
+
+<link rel="canonical" href="https://www.i100.xyz/posts/8588bfe2.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>自定义图床解决PicGo上传失败 | 百里の博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="百里の博客" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">百里の博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">倘只看书,便变成书橱</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.i100.xyz/posts/8588bfe2.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.jpg">
+      <meta itemprop="name" content="百里">
+      <meta itemprop="description" content="我好像一只牛,吃的是草,挤出的是牛奶">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="百里の博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          自定义图床解决PicGo上传失败<span class="exturl post-edit-link" data-url="aHR0cHM6Ly9naXRodWIuY29tL2ZveHNjYWxsaW9tL0Jsb2ctSGV4by9lZGl0L21haW4vc291cmNlL19wb3N0cy/kvJjpm4Xkvb/nlKjoh6rlrprkuYnlm77luorlroznvo7op6PlhrNQaWNHb+S4iuS8oOWksei0peeahOWQhOenjemXrumimC5tZA==" title="编辑"><i class="fa fa-pencil-alt"></i></span>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-09-01 12:42:48" itemprop="dateCreated datePublished" datetime="2021-09-01T12:42:48+08:00">2021-09-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-02-08 18:21:00" itemprop="dateModified" datetime="2022-02-08T18:21:00+08:00">2022-02-08</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>经常碰到使用PicGo上传失败等问题，今天教程来了，使用自定义图床完美解决上传失败问题</p>
+<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><h3 id="番茄"><a href="#番茄" class="headerlink" title="番茄"></a>番茄</h3><p>前提必须要梯子，实在不会，可以看我这篇，不需要梯子，也是白嫖，<span class="exturl" data-url="aHR0cHM6Ly93d3cuZm94c2NhbGxpb24udG9wL3Bvc3RzL2IzMzUyZWU3Lmh0bWw=">彩虹云白嫖图床教程<i class="fa fa-external-link-alt"></i></span><br>我准备了一个手机的，小编目前没有电脑的，不过手机勉强够用<br> 这个是<code>GitHub仓库</code>的下载地址<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2ZveHNjYWxsaW9uMTEvQ2FseXhWUE4uZ2l0">Calyx<i class="fa fa-external-link-alt"></i></span><br> 考虑到GitHub下载太慢，我还上传了一个<code>Gitee仓库</code>的下载地址<span class="exturl" data-url="aHR0cHM6Ly9naXRlZS5jb20vZGFkYTY5L0NhbHl4VlBOLmdpdA==">Calyx<i class="fa fa-external-link-alt"></i></span></p>
+<h3 id="国外邮箱"><a href="#国外邮箱" class="headerlink" title="国外邮箱"></a>国外邮箱</h3><p>一个国外邮箱，比如google或者outlook（建议谷歌邮箱）</p>
+<span id="more"></span>
+<h2 id="创建虚拟主机"><a href="#创建虚拟主机" class="headerlink" title="创建虚拟主机"></a>创建虚拟主机</h2><h3 id="注册000webhost"><a href="#注册000webhost" class="headerlink" title="注册000webhost"></a>注册000webhost</h3><p>中转服务器需要国外服务器,只能使用国外的服务器，这里有个免费的国外服务器<br>注册<span class="exturl" data-url="aHR0cHM6Ly93d3cuMDAwd2ViaG9zdC5jb20v">000webhost<i class="fa fa-external-link-alt"></i></span>这个是国外的地址<br>当然还有个免费的国内地址<span class="exturl" data-url="aHR0cHM6Ly93d3cuY2NjeXVuLm5ldC8=">彩虹云<i class="fa fa-external-link-alt"></i></span>，移步看我这篇<span class="exturl" data-url="aHR0cHM6Ly93d3cuZm94c2NhbGxpb24udG9wL3Bvc3RzL2IzMzUyZWU3Lmh0bWw=">彩虹云白嫖图床教程<i class="fa fa-external-link-alt"></i></span><br>我这里主要介绍国外的服务器，彩虹云可以自己去尝试<br>使用第三个谷歌邮箱进行导入<br><img data-src="https://cdn.jsdelivr.net/gh/foxscallion11/sc1@master/2020/08/30/8465e830c590bc53557f471fd693ac56.png"></p>
+<h3 id="开始创建"><a href="#开始创建" class="headerlink" title="开始创建"></a>开始创建</h3><p>选择第一个免费<br><img data-src="https://cdn.jsdelivr.net/gh/foxscallion11/sc1@master/2020/08/30/5e7cf8a4161399c91fa1e07f476925e9.png"><br>选择other<br><img data-src="https://cdn.jsdelivr.net/gh/foxscallion11/sc1@master/2020/08/30/718fe22585a1e76c81f40e36c8dff4e0.png"><br>接下来填入网站名称和密码<br><img data-src="https://cdn.jsdelivr.net/gh/foxscallion11/sc1@master/2020/08/30/88bf179ce0c4ff69e2bfdf7d0d4f1ac5.png"><br>选择第三个上传你的网站<br><img data-src="https://cdn.jsdelivr.net/gh/foxscallion11/sc1@master/2020/08/30/c9132ca4ab1af7abae3ea5b26d636ee1.png"></p>
+<h3 id="登入管理页面"><a href="#登入管理页面" class="headerlink" title="登入管理页面"></a>登入管理页面</h3><p>先不要操作<br><img data-src="https://cdn.jsdelivr.net/gh/foxscallion11/sc1@master/2020/08/30/4ca6e781bd8bac391b2fa5081d41aeb8.png"></p>
+<h2 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h2><p>项目地址在这里：双击进去下载<br><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2ZveHNjYWxsaW9uMTEvYXV0b1BpY0Nkbi5naXQ=">autoPicCdn<i class="fa fa-external-link-alt"></i></span><br>然后修改up.php文件<br>按照提示修改信息</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">define(&quot;REPO&quot;,&quot;仓库&quot;);//必须是下面用户名下的公开仓库</span><br><span class="line">define(&quot;USER&quot;,&quot;github仓库名&quot;);//必须是当前GitHub用户名</span><br><span class="line">define(&quot;MAIL&quot;,&quot;yumusb@foxmail.com&quot;);//</span><br><span class="line">define(&quot;TOKEN&quot;,&quot;token&quot;);//https://github.com/settings/tokens 去这个页面生成一个有写权限的token（write:packages前打勾）</span><br></pre></td></tr></table></figure>
+<p>然后保存</p>
+<h3 id="上传up-php文件"><a href="#上传up-php文件" class="headerlink" title="上传up.php文件"></a>上传up.php文件</h3><p>回到刚才登入界面<br><img data-src="https://cdn.jsdelivr.net/gh/foxscallion11/sc1@master/2020/08/30/4ca6e781bd8bac391b2fa5081d41aeb8.png"><br>进入public_html<br>上传文件<br><img data-src="https://cdn.jsdelivr.net/gh/foxscallion11/sc1@master/2020/08/30/080ed058abcf77633d29b791b8bcc713.png"><br>当然index.html也可以上传<br>访问下面的地址：<br><span class="exturl" data-url="aHR0cHM6Ly93d3cuMDAwd2ViaG9zdC5jb20vbWVtYmVycy93ZWJzaXRlL2xpc3Q=">https://www.000webhost.com/members/website/list<i class="fa fa-external-link-alt"></i></span><br>然后复制访问地址<br><img data-src="https://cdn.jsdelivr.net/gh/foxscallion11/sc1@master/2020/08/30/ecedb1d16175d2b8a301cdd0eb2a1ed8.png"></p>
+<h2 id="比如我的地址"><a href="#比如我的地址" class="headerlink" title="比如我的地址"></a>比如我的地址</h2><h3 id="图片上传地址"><a href="#图片上传地址" class="headerlink" title="图片上传地址"></a>图片上传地址</h3><p><span class="exturl" data-url="aHR0cHM6Ly9mb3hzY2FsbGlvbi4wMDB3ZWJob3N0YXBwLmNvbS9pbmRleC5odG1s">https://foxscallion.000webhostapp.com/index.html<i class="fa fa-external-link-alt"></i></span><br><img data-src="https://cdn.jsdelivr.net/gh/foxscallion11/sc1@master/2020/08/30/dc49f6f30ea9914fa049d8398c8b1d65.png"></p>
+<h3 id="图片上传up-php文件"><a href="#图片上传up-php文件" class="headerlink" title="图片上传up.php文件"></a>图片上传up.php文件</h3><p><span class="exturl" data-url="aHR0cHM6Ly9mb3hzY2FsbGlvbi4wMDB3ZWJob3N0YXBwLmNvbS91cC5waHA=">https://foxscallion.000webhostapp.com/up.php<i class="fa fa-external-link-alt"></i></span></p>
+<h2 id="打开PicGo"><a href="#打开PicGo" class="headerlink" title="打开PicGo"></a>打开PicGo</h2><p>选择插件设置<br>搜索web-uploader插件<br><img data-src="https://cdn.jsdelivr.net/gh/foxscallion11/sc1@master/2020/09/01/90a444fbb8fcf346ce8f7395c2231721.png"><br>选择最后一个配置<br><img data-src="https://cdn.jsdelivr.net/gh/foxscallion11/sc1@master/2020/09/01/28450c82c773b4dc76a7d8b887bfb3cf.png"><br>配置web-uploader<br><img data-src="https://cdn.jsdelivr.net/gh/foxscallion11/sc1@master/2020/09/01/3621a06f1317cab050be650ef51ffd9d.png"><br>选择自定义web图床<br><img data-src="https://cdn.jsdelivr.net/gh/foxscallion11/sc1@master/2020/09/01/ab7374d4fc3dfeb541037c043bde0ded.png"></p>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><p>测试<br><img data-src="https://cdn.jsdelivr.net/gh/foxscallion11/sc1@master/2020/09/01/5c11e7abce25e8c12088c61eaa044bc1.png"></p>
+<h2 id="温馨提示"><a href="#温馨提示" class="headerlink" title="温馨提示"></a>温馨提示</h2><blockquote><p>本文写作不易，给个评论支持一下噢，蟹蟹啦<br>我的博客即将同步至腾讯云+社区，邀请大家一同入驻：<span class="exturl" data-url="aHR0cHM6Ly9jbG91ZC50ZW5jZW50LmNvbS9kZXZlbG9wZXIvc3VwcG9ydC1wbGFuP2ludml0ZV9jb2RlPTEzcHZ0dTYwYjk5azc=">https://cloud.tencent.com/developer/support-plan?invite_code=13pvtu60b99k7<i class="fa fa-external-link-alt"></i></span></p>
+</blockquote>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/e9295853.html" rel="prev" title="从hexo转hugo">
+      <i class="fa fa-chevron-left"></i> 从hexo转hugo
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/82baa9c8.html" rel="next" title="六十句心灵鸡汤">
+      六十句心灵鸡汤 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87"><span class="nav-number">1.</span> <span class="nav-text">准备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%95%AA%E8%8C%84"><span class="nav-number">1.1.</span> <span class="nav-text">番茄</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BD%E5%A4%96%E9%82%AE%E7%AE%B1"><span class="nav-number">1.2.</span> <span class="nav-text">国外邮箱</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA"><span class="nav-number">2.</span> <span class="nav-text">创建虚拟主机</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E5%86%8C000webhost"><span class="nav-number">2.1.</span> <span class="nav-text">注册000webhost</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E5%A7%8B%E5%88%9B%E5%BB%BA"><span class="nav-number">2.2.</span> <span class="nav-text">开始创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%99%BB%E5%85%A5%E7%AE%A1%E7%90%86%E9%A1%B5%E9%9D%A2"><span class="nav-number">2.3.</span> <span class="nav-text">登入管理页面</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83"><span class="nav-number">3.</span> <span class="nav-text">配置环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8A%E4%BC%A0up-php%E6%96%87%E4%BB%B6"><span class="nav-number">3.1.</span> <span class="nav-text">上传up.php文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AF%94%E5%A6%82%E6%88%91%E7%9A%84%E5%9C%B0%E5%9D%80"><span class="nav-number">4.</span> <span class="nav-text">比如我的地址</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0%E5%9C%B0%E5%9D%80"><span class="nav-number">4.1.</span> <span class="nav-text">图片上传地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0up-php%E6%96%87%E4%BB%B6"><span class="nav-number">4.2.</span> <span class="nav-text">图片上传up.php文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%93%E5%BC%80PicGo"><span class="nav-number">5.</span> <span class="nav-text">打开PicGo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8C%E6%88%90"><span class="nav-number">6.</span> <span class="nav-text">完成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B8%A9%E9%A6%A8%E6%8F%90%E7%A4%BA"><span class="nav-number">7.</span> <span class="nav-text">温馨提示</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="百里"
+      src="/images/head.jpg">
+  <p class="site-author-name" itemprop="name">百里</p>
+  <div class="site-description" itemprop="description">我好像一只牛,吃的是草,挤出的是牛奶</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">百里</span>
+</div>
+  <div class="powered-by">由 <span class="exturl theme-link" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl theme-link" data-url="aHR0cHM6Ly90aGVtZS1uZXh0Lm9yZw==">NexT.Gemini</span> 强力驱动
+  </div>
+<div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv" style='display:none'>
+    本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+    <span class="post-meta-divider">|</span>
+</span>
+<span id="busuanzi_container_site_uv" style='display:none'>
+    有<span id="busuanzi_value_site_uv"></span>人看过我的博客啦
+</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+  <script data-pjax>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '2be93ecc13442d31d030',
+      clientSecret: '4fa40343eb33997d3141277e00993d868e5e8979',
+      repo        : 'Blog-Hexo',
+      owner       : 'foxscalliom',
+      admin       : ['foxscalliom'],
+      id          : '3305fd31e16cfeaafb806db03cd440f6',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+    </div>
+</body>
+</html>
